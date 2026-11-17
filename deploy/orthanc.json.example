@@ -1,0 +1,26 @@
+{
+  "//": "Potongan konfigurasi Orthanc (PACS) yang relevan untuk RIS RSUD Hanau. Gabungkan ke orthanc.json Anda.",
+  "Name": "PACS_RSUD_HANAU",
+  "DicomAet": "ORTHANC",
+  "DicomPort": 4242,
+  "HttpPort": 8042,
+  "RemoteAccessAllowed": true,
+  "AuthenticationEnabled": true,
+  "RegisteredUsers": { "ris": "GANTI_PASSWORD" },
+
+  "//StableAge": "detik tanpa gambar baru sebelum study dianggap lengkap (memicu StableStudy -> RIS)",
+  "StableAge": 30,
+
+  "DicomAlwaysAllowStore": true,
+  "DicomCheckCalledAet": false,
+
+  "//DicomModalities": "Alat yang boleh query/retrieve + DICOM Router SATUSEHAT (tujuan forward)",
+  "DicomModalities": {
+    "CR_FUJI":    ["CR_FUJI",    "192.168.1.31", 104],
+    "CT_SIEMENS": ["CT_SIEMENS", "192.168.1.32", 104],
+    "SATUSEHAT":  ["DCMROUTER",  "192.168.1.40", 11112]
+  },
+
+  "//Plugins": "Aktifkan plugin OHIF / Stone Web Viewer untuk VIEWER_URL_TEMPLATE",
+  "Plugins": ["/usr/share/orthanc/plugins"]
+}

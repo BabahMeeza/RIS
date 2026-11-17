@@ -1,0 +1,17 @@
+[Unit]
+Description=RIS RSUD Hanau (Radiology Information System)
+After=network.target mariadb.service mysql.service
+
+[Service]
+Type=simple
+User=ris
+WorkingDirectory=/opt/ris-hanau
+ExecStart=/usr/bin/node src/server.js
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+# Port DICOM < 1024 (mis. 104) butuh capability berikut:
+# AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target

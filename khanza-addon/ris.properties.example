@@ -1,0 +1,4 @@
+# Salin menjadi setting/ris.properties di folder aplikasi SIMRS Khanza
+# (sejajar dengan setting/database.xml) di setiap PC yang memakai tombol "Kirim ke RIS".
+RIS_URL=http://192.168.10.118:8090
+RIS_KEY=ganti-dengan-kunci-acak-panjang
